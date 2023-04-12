@@ -24,7 +24,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                  git branch: "devops1", url: "https://github.com/easyawslearn/Terraform-Tutorial.git"
+                  git branch: "main", url: "https://github.com/srinivasuluparanduru/TerraformDemos.git"
                   }
             }
 
@@ -38,7 +38,7 @@ pipeline {
                       -input=true \
                       -force-copy \
                       -backend=true \
-                      -backend-config "bucket=aws-terraform-devops-backend" \
+                      -backend-config "bucket=terraform-remote-statefile-april2023" \
                       -backend-config "key=terraform-${region}/${service}.tfstate" \
                       -backend-config "region=${region}" \
                       -backend-config "dynamodb_table=terraform" \
